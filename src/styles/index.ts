@@ -6,5 +6,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  body {
+    min-height: 100vh;
+  }
 `
 export default GlobalStyles
