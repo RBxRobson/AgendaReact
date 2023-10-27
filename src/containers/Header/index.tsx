@@ -1,12 +1,24 @@
+//* Importações internas *\\
 import Logo from '../../components/Logo'
-import { HeaderStyle, TitleHeader } from './style'
+import * as S from './style'
+import SVGAgenda from '../../assets/images/icon-agenda.svg'
 
 const Header = () => {
   return (
-    <HeaderStyle>
-      <Logo />
-      <TitleHeader> AgendaPlus|RB</TitleHeader>
-    </HeaderStyle>
+    <S.Header>
+      <S.HeaderContainer>
+        <S.TitleHeader>
+          <span>
+            <S.IconAgenda
+              src={SVGAgenda}
+              alt="ícone de uma agenda de contatos"
+            />
+          </span>
+          Agenda<S.HighlightedText>Plus</S.HighlightedText>
+        </S.TitleHeader>
+        <Logo />
+      </S.HeaderContainer>
+    </S.Header>
   )
 }
 

@@ -33,20 +33,13 @@ export const LogoStyle = styled.div`
   align-items: center;
 
   //* Posicionamento do logo no layout */
-  position: absolute;
-  left: 20px;
-  top: 20px;
+  position: relative;
 
   //* Tamanho do logo, ajuste para formato circular, overflow para limitar o before */
   width: 70px;
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
-
-  //* Sombra para dar destaque */
-  box-shadow:
-    rgba(17, 17, 26, 0.118) 0px 1px 0px,
-    rgba(17, 17, 26, 0.103) 0px 0px 8px;
 
   //* Before usado para criar a box que irá dar o efeito borda animada ao logo */
   &::before {
@@ -58,7 +51,7 @@ export const LogoStyle = styled.div`
     height: 0;
 
     //* Cor da borda animada do logo */
-    background: red;
+    background: #fff;
 
     //* Animação que causa o efeito borda animada */
     animation:
@@ -70,18 +63,19 @@ export const LogoStyle = styled.div`
   &::after {
     //* Conteúdo textual do logo, sua cor e posicionamento centralizado */
     content: 'RB';
-    color: black;
+    color: #fff;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
 
     //* Tamanho e formato da box sobreposta ao before, aqui define-se o tamanho da borda */
-    width: 66px;
-    height: 66px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
+    border: 1px solid #fff;
 
     //* Cor do background do logo e borda simples para melhorar seu destaque no layout */
-    background: green;
+    background: #acb1f9;
   }
 `
