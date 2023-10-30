@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux'
 import store from './redux'
 
+import './styles/main.css'
 import GlobalStyles, { ContainerMain } from './styles'
 import Header from './containers/Header'
 import SideBar from './containers/SideBar'

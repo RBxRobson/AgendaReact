@@ -1,0 +1,17 @@
+:root {
+  --color-primary: #acb1f9;
+  --color-secondary: #8089d1;
+  --color-white-default: #fff;
+}
+
+@font-face {
+  font-family: Lobster Two;
+  font-weight: 400;
+  src: url(../assets/fonts/LobsterTwo-Regular.ttf);
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-weight: 400;
+  src: url(../assets/fonts/OpenSans.ttf);
+}

@@ -8,7 +8,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #acb1f9;
+  background-color: var(--color-primary);
 `
 
 //* Ícone usado no titulo *\\
@@ -24,7 +24,7 @@ export const TitleHeader = styled.h1`
   align-items: center;
   font-weight: bold;
   font-size: 36px;
-  color: white;
+  color: var(--color-white-default);
 
   //* Hover na area do titulo para dar zoom no icone *\\
   &:hover {
@@ -36,13 +36,17 @@ export const TitleHeader = styled.h1`
 
 //* Texto marcado usado no titulo do header *\\
 export const HighlightedText = styled.span`
-  margin: 0 2px;
-  color: #8089d1;
+  font-family:
+    Lobster Two,
+    cursive;
+  color: var(--color-secondary);
   text-shadow:
-    -2px 2px 4px #fff,
-    2px -2px 4px #fff;
+    -2px 2px 4px var(--color-white-default),
+    2px -2px 4px var(--color-white-default);
+  margin: 0 2px;
 `
 
+//* Container do cabeçalho *\\
 export const HeaderContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
