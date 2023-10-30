@@ -1,16 +1,23 @@
 import { Provider } from 'react-redux'
 import store from './redux'
 
-import GlobalStyles from './styles'
+import GlobalStyles, { ContainerMain } from './styles'
 import Header from './containers/Header'
-import Footer from './containers/Footer'
+import SideBar from './containers/SideBar'
+import AdjacentSideBar from './containers/AdjacentSideBar'
+// import Footer from './containers/Footer'
+// import AnimationSmartphone from './components/SmartphoneAnimation'
 
 function App() {
   return (
     <Provider store={store}>
       <GlobalStyles />
       <Header />
-      <Footer />
+      <ContainerMain>
+        <SideBar />
+        <AdjacentSideBar />
+      </ContainerMain>
+      {/* <AnimationSmartphone /> */}
     </Provider>
   )
 }
