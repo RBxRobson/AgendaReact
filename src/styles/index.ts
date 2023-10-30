@@ -28,4 +28,21 @@ export const ContainerMain = styled(Container).attrs({ as: 'main' })`
   display: flex;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
+`
+
+export const BtnAddContact = styled.button`
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+
+  img {
+    width: 60%;
+  }
 `
