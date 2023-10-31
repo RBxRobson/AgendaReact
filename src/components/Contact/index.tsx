@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import * as S from './style'
+import IconMore from '../../assets/componentsSVG/IconMore'
 
 type Props = {
   name: string
@@ -29,7 +30,9 @@ const Contact = ({ name, lastName }: Props) => {
           {name} {lastName}
         </S.Name>
       </S.Details>
-      <S.View>+</S.View>
+      <S.View>
+        <IconMore />
+      </S.View>
     </S.Contact>
   )
 }

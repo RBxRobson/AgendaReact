@@ -1,5 +1,5 @@
 import ContactList from '../../components/ContactList'
-import IconSearch from '../../components/IconSearch'
+import IconSearch from '../../assets/componentsSVG/IconSearch'
 import * as S from './style'
 
 const SideBar = () => {

@@ -1,6 +1,6 @@
 import { useLottie } from 'lottie-react'
 import { Animation } from './style'
-import smartphoneJSON from '../../assets/LottieJson/smartphone-animation.json'
+import smartphoneJSON from '../../assets/lottieJson/smartphone-animation.json'
 
 const AnimationSmartphone = () => {
   const options = {
