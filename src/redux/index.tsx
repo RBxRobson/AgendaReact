@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
+import contactsReducer from './reducers/contacts'
 
 //* Criando nossa store para fazer uso do redux *\\
 const store = configureStore({
-  reducer: {}
+  reducer: {
+    contacts: contactsReducer
+  }
 })
 
 //* Inferindo o tipo de dados com o returnType

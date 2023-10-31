@@ -24,7 +24,7 @@ export const LogoStyle = styled.div`
     Lobster Two,
     cursive;
   font-size: 28px;
-  text-shadow: 0 0 10px white;
+  text-shadow: 0 0 10px var(--color-white-default);
 
   //* Alinhamento do texto no centro */
   display: flex;
