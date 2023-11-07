@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import Contact from '../../models/Contact'
 
@@ -11,13 +11,13 @@ const initialState: ContactsState = {
     {
       name: 'robson',
       lastName: 'barbosa',
-      telephone: 5554996994377,
+      telephone: 5554996994373,
       email: 'robsonnbarbosa0@gmail.com'
     },
     {
       name: 'layana',
       lastName: 'dos santos',
-      telephone: 5554996994377,
+      telephone: 5554996994374,
       email: 'robsonnbarbosa0@gmail.com'
     },
     {
@@ -32,7 +32,19 @@ const initialState: ContactsState = {
 const ContactsSlice = createSlice({
   name: 'Contacts',
   initialState,
-  reducers: {}
+  reducers: {
+    register: (state, action: PayloadAction<Contact>) => {
+      const numberRegistered = state.itens.find(
+        (contact) => contact.telephone === action.payload.telephone
+      )
+      if (numberRegistered) {
+        alert('Já existe um contato com esse numero de telefone.')
+      } else {
+        state.itens.push(action.payload)
+      }
+    }
+  }
 })
 
+export const { register } = ContactsSlice.actions
 export default ContactsSlice.reducer

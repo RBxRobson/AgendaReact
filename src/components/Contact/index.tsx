@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import * as S from './style'
 import IconMore from '../../assets/componentsSVG/IconMore'
 
@@ -8,24 +7,10 @@ type Props = {
 }
 
 const Contact = ({ name, lastName }: Props) => {
-  const [randomColor, setRandomColor] = useState('#FFF')
-
-  function generateColor() {
-    const r = Math.floor(Math.random() * 150) + 75
-    const g = Math.floor(Math.random() * 150) + 75
-    const b = Math.floor(Math.random() * 150) + 75
-    const newColor = `rgb(${r}, ${g}, ${b})`
-    setRandomColor(newColor)
-  }
-
-  useEffect(() => {
-    generateColor()
-  }, [])
-
   return (
     <S.Contact>
       <S.Details>
-        <S.Avatar color={randomColor}>{name.charAt(0).toUpperCase()}</S.Avatar>
+        <S.Avatar color="#000">{name.charAt(0).toUpperCase()}</S.Avatar>
         <S.Name>
           {name} {lastName}
         </S.Name>

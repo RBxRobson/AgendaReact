@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     min-height: 100vh;
-    background-color: #f6f6f6;
+    background-color: #e9ebff;
   }
 `
 export default GlobalStyles
@@ -30,20 +30,4 @@ export const ContainerMain = styled(Container).attrs({ as: 'main' })`
   margin: 0 auto;
   padding: 20px;
   position: relative;
-`
-
-export const BtnAddContact = styled.button`
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  background-color: var(--color-primary);
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-
-  img {
-    width: 60%;
-  }
 `

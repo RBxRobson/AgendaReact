@@ -20,11 +20,13 @@ export const IconAgenda = styled.img`
 //* Titulo do header *\\
 export const TitleHeader = styled.h1`
   //* Estilos aplicados na fonte */
-  display: flex;
-  align-items: center;
   font-weight: bold;
   font-size: 36px;
   color: var(--color-white-default);
+
+  //* Centralizando verticalmente *\\
+  display: flex;
+  align-items: center;
 
   //* Hover na area do titulo para dar zoom no icone *\\
   &:hover {

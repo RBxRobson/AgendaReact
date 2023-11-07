@@ -1,10 +1,16 @@
+import { ReactNode } from 'react'
 import AnimationSmartphone from '../../components/SmartphoneAnimation'
 import { StyledAdjacentSideBar } from './style'
 
-const AdjacentSideBar = () => {
+type Props = {
+  children: ReactNode
+}
+
+const AdjacentSideBar = ({ children }: Props) => {
   return (
     <StyledAdjacentSideBar>
       <AnimationSmartphone />
+      {children}
     </StyledAdjacentSideBar>
   )
 }

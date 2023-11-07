@@ -10,9 +10,9 @@ const ContactList = () => {
 
   return (
     <S.ContactList>
-      <Contact name={contacts[0].name} lastName={contacts[0].lastName} />
-      <Contact name={contacts[1].name} lastName={contacts[1].lastName} />
-      <Contact name={contacts[2].name} lastName={contacts[2].lastName} />
+      {contacts.map((c) => (
+        <Contact key={c.telephone} name={c.name} lastName={c.lastName} />
+      ))}
     </S.ContactList>
   )
 }

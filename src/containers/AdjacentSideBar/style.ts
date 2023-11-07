@@ -9,7 +9,9 @@ export const StyledAdjacentSideBar = styled.div`
   //* Ocupando 2 partes do layout
   flex: 2;
 
-  background-color: #fff;
+  position: relative;
+
+  background-color: var(--color-white-default);
   border: 2px solid var(--color-primary);
   border-left: none;
 `
