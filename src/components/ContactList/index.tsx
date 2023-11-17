@@ -11,7 +11,12 @@ const ContactList = () => {
   return (
     <S.ContactList>
       {contacts.map((c) => (
-        <Contact key={c.telephone} name={c.name} lastName={c.lastName} />
+        <Contact
+          key={c.telephone}
+          name={c.name}
+          lastName={c.lastName}
+          colorContact={c.colorContact}
+        />
       ))}
     </S.ContactList>
   )

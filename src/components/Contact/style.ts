@@ -39,7 +39,7 @@ export const Name = styled.h2`
   padding-left: 8px;
 `
 
-export const View = styled.button`
+export const BtnView = styled.button`
   margin-right: 8px;
   cursor: pointer;
   border: none;

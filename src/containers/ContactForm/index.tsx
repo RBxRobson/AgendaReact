@@ -2,15 +2,11 @@ import { useDispatch } from 'react-redux'
 import { FormEvent, useEffect, useState } from 'react'
 
 import { register } from '../../redux/reducers/contacts'
+import { displayContent } from '../../redux/reducers/tabContent'
 
 import * as S from './style'
 
-type Props = {
-  //* Definindo o tipo de uma função que aceita um valor booleano como argumento
-  updateIsRegistering: (value: boolean) => void
-}
-
-const ContactForm = (props: Props) => {
+const ContactForm = () => {
   const dispatch = useDispatch()
 
   //* Armazenando dados dos campos inputs *\\
@@ -52,17 +48,19 @@ const ContactForm = (props: Props) => {
     return FirstLetterUpper
   }
 
-  const closeRegisterForm = () => {
-    //* Estado do componente pai atualizado para false, fechando a aba de cadastro
-    props.updateIsRegistering(false)
+  function closeRegister() {
+    return dispatch(
+      //* Reducer que define qual conteúdo será exibido
+      displayContent({
+        isViewing: false,
+        isRegister: false
+      })
+    )
   }
 
   const registerContact = (e: FormEvent) => {
     //* Retirando reload da pagina ao efetuar o submit
     e.preventDefault()
-
-    //* Fecha aba de registro
-    closeRegisterForm()
 
     //* Usando o dispatch para chamar nosso reducer
     dispatch(
@@ -73,9 +71,12 @@ const ContactForm = (props: Props) => {
         name,
         lastName,
         telephone,
-        email
+        email,
+        colorContact: randomColor
       })
     )
+
+    closeRegister()
   }
 
   return (
@@ -113,7 +114,7 @@ const ContactForm = (props: Props) => {
         />
         <S.ButtonsForm>
           <S.SaveBtn type="submit">Salvar</S.SaveBtn>
-          <S.CancelBtn type="button" onClick={closeRegisterForm}>
+          <S.CancelBtn type="button" onClick={closeRegister}>
             Cancelar
           </S.CancelBtn>
         </S.ButtonsForm>

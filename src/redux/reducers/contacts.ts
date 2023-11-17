@@ -9,22 +9,11 @@ type ContactsState = {
 const initialState: ContactsState = {
   itens: [
     {
-      name: 'robson',
-      lastName: 'barbosa',
-      telephone: 5554996994373,
-      email: 'robsonnbarbosa0@gmail.com'
-    },
-    {
-      name: 'layana',
-      lastName: 'dos santos',
-      telephone: 5554996994374,
-      email: 'robsonnbarbosa0@gmail.com'
-    },
-    {
-      name: 'teste',
-      lastName: 'teste',
-      telephone: 5554996994377,
-      email: 'robsonnbarbosa0@gmail.com'
+      name: 'Seu',
+      lastName: 'Contato',
+      telephone: 99999999999,
+      email: 'example00@email.com',
+      colorContact: '#444'
     }
   ]
 }
