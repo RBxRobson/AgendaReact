@@ -14,8 +14,9 @@ const ContactList = () => {
         <Contact
           key={c.telephone}
           name={c.name}
-          lastName={c.lastName}
           colorContact={c.colorContact}
+          telephone={c.telephone}
+          email={c.email}
         />
       ))}
     </S.ContactList>

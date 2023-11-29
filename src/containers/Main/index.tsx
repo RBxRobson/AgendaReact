@@ -8,13 +8,15 @@ import { ContainerMain } from './style'
 import BtnAddContact from '../../components/BtnAddContact'
 
 const Main = () => {
-  const { isRegister } = useSelector((state: RootReducer) => state.tabContent)
+  const { isEditing, isViewing } = useSelector(
+    (state: RootReducer) => state.tabContent
+  )
 
   return (
     <ContainerMain>
       <SideBar />
       <AdjacentSideBar />
-      {!isRegister && <BtnAddContact />}
+      {!isEditing && !isViewing && <BtnAddContact />}
     </ContainerMain>
   )
 }

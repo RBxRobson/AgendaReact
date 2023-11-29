@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type tabContent = {
+  isEditing: boolean
   isViewing: boolean
-  isRegister: boolean
 }
 
 const initialState: tabContent = {
-  isViewing: false,
-  isRegister: false
+  isEditing: false,
+  isViewing: false
 }
 
 const tabContentSlice = createSlice({
@@ -16,9 +16,9 @@ const tabContentSlice = createSlice({
   reducers: {
     displayContent: (
       state,
-      action: PayloadAction<{ isViewing: boolean; isRegister: boolean }>
+      action: PayloadAction<{ isEditing: boolean; isViewing: boolean }>
     ) => {
-      state.isRegister = action.payload.isRegister
+      state.isEditing = action.payload.isEditing
       state.isViewing = action.payload.isViewing
     }
   }

@@ -1,13 +1,12 @@
 import { useSelector } from 'react-redux'
 
 import AnimationSmartphone from '../../components/SmartphoneAnimation'
-import ContactForm from '../ContactForm'
-import ContactInfos from '../ContactInfos'
+import ContactForm from '../ContainerContact'
 import { StyledAdjacentSideBar } from './style'
 import { RootReducer } from '../../redux'
 
 const AdjacentSideBar = () => {
-  const { isViewing, isRegister } = useSelector(
+  const { isEditing, isViewing } = useSelector(
     (state: RootReducer) => state.tabContent
   )
 
@@ -15,14 +14,8 @@ const AdjacentSideBar = () => {
     <StyledAdjacentSideBar>
       <AnimationSmartphone />
       {
-        //* Exibe o formulário de cadastro apenas quando o usuário estiver registrando
-        //* e não visualizando as informações de um contato contato
-        isRegister && !isViewing && <ContactForm />
-      }
-      {
-        //* Exibe o formulário de cadastro apenas quando o usuário estiver registrando
-        //* e não visualizando as informações de um contato contato
-        !isRegister && isViewing && <ContactInfos />
+        //* Mostra as informações do contato de acordo com o modo de exibição
+        (isEditing || isViewing) && <ContactForm />
       }
     </StyledAdjacentSideBar>
   )

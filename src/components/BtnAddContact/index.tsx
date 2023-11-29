@@ -8,7 +8,7 @@ const BtnAddContact = () => {
   const dispatch = useDispatch()
 
   const addContact = () => {
-    dispatch(displayContent({ isViewing: false, isRegister: true }))
+    dispatch(displayContent({ isEditing: true, isViewing: false }))
   }
 
   return (

@@ -1,11 +1,10 @@
-import * as S from './style'
-
 const IconMore = () => {
   return (
-    <S.IconMore
+    <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="40px"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
@@ -25,7 +24,7 @@ const IconMore = () => {
           fill="#a5a5a5"
         ></path>
       </g>
-    </S.IconMore>
+    </svg>
   )
 }
 
