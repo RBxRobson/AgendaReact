@@ -66,6 +66,7 @@ const ContainerContact = () => {
         isViewing: isViewing
       })
     )
+    console.log(isEditing)
   }
 
   const registerContact = (e: FormEvent) => {
@@ -156,7 +157,10 @@ const ContainerContact = () => {
             <S.BtnContact
               style={borderNone}
               type="button"
-              onClick={() => setStateContact(true, false)}
+              onClick={(e) => {
+                //* desativando o comportamento padrão para evitar o submit
+                e.preventDefault()
+                setStateContact(true, false)}}
             >
               Editar
             </S.BtnContact>
