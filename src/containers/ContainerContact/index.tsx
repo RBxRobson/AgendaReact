@@ -2,33 +2,48 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FormEvent, useEffect, useState } from 'react'
 
 import { RootReducer } from '../../redux'
-import { register, remove } from '../../redux/reducers/contacts'
-import { displayContent } from '../../redux/reducers/tabContent'
+import { register, update, remove, setSelectedContact } from '../../redux/reducers/contacts'
+import { setUserAction } from '../../redux/reducers/userActions'
 
 import * as S from './style'
+import IconBack from '../../assets/componentsSVG/IconBack'
 import IconContact from '../../assets/componentsSVG/IconContact'
 import IconTelephone from '../../assets/componentsSVG/IconTelephone'
 import IconEmail from '../../assets/componentsSVG/IconEmail'
 
 const ContainerContact = () => {
-  //* Acessando nosso estado temporário que terá as informações do contato
+  const dispatch = useDispatch()
+  //* Acessando nosso estado temporário do contato selecionado
   const selectedContact = useSelector(
     (state: RootReducer) => state.contacts.selectedContact
   )
+  //* Acessando nossa lista de contatos
+  const contactList = useSelector(
+    (state: RootReducer) => state.contacts.itens
+  )
+  //* Acessando o estado responsável por gerenciar as ações do user
+  const { userAction } = useSelector(
+    (state: RootReducer) => state.userActions
+  )
 
-  const { isEditing } = useSelector((state: RootReducer) => state.tabContent)
-
-  const dispatch = useDispatch()
-
-  //* Armazenando dados dos campos inputs *\\
+  //* Armazenando dados dos campos inputs
   const [name, setName] = useState('')
-  const [telephone, setTelephone] = useState<number | ''>('')
+  const [telephone, setTelephone] = useState<number | ' '>(' ')
   const [email, setEmail] = useState('')
 
-  //* Armazena a cor do avatar do contato *\\
+  //* Atualizando os dados dos inputs de acordo com o contato selecionado
+  useEffect(() => {
+    if (selectedContact !== undefined) {
+      setName(selectedContact.name)
+      setEmail(selectedContact.email)
+      setTelephone(selectedContact.telephone)
+    }
+  }, [selectedContact])
+
+  //* Armazena a cor do avatar do contato
   const [randomColor, setRandomColor] = useState('#ccc')
 
-  //* Função para criar uma cor aleatória para o avatar de cada contato *\\
+  //* Função para criar uma cor aleatória para o avatar de cada contato
   function generateColor() {
     //* Gerando um valor aleatório para cada canal de cor (r,g,b)
     const r = Math.floor(Math.random() * 150) + 75
@@ -38,67 +53,88 @@ const ContainerContact = () => {
     //* Construindo uma string no formato 'rgb(r, g, b)' com os valores gerados
     const newColor = `rgb(${r}, ${g}, ${b})`
 
-    //* Adicionando a nova cor ao nosso state *\\
+    //* Adicionando a nova cor ao nosso state
     setRandomColor(newColor)
   }
 
-  //* Dispara a função na criação do elemento *\\
+  //* Dispara a função na criação do elemento
   useEffect(() => {
     generateColor()
   }, [])
 
+  //* Transforma a primeira letra do nome em maiúscula
   function getFirstLetterUpper(name: string) {
-    //* Armazena a primeira letra do nome *\\
+    //* Armazena a primeira letra do nome
     const FirstLetterUpper =
       //* Verifica se 'name' retorna um valor diferente de undefined e
-      //* tem comprimento maior que zero, para não causar erro no ts.
+      //* tem comprimento maior que zero.
       //* Se for diferente iremos resgatar o primeiro caractere em maiúsculo
-      //* caso contrário definimos que é uma string vazia
+      //* caso contrário definimos que é uma string vazia.
       name !== undefined && name.length > 0 ? name[0].toUpperCase() : ''
     return FirstLetterUpper
   }
 
-  //* Função que irá muda o estado do contato *\\
-  const setStateContact = (isEditing: boolean, isViewing: boolean) => {
-    dispatch(
-      displayContent({
-        isEditing: isEditing,
-        isViewing: isViewing
-      })
-    )
-    console.log(isEditing)
-  }
-
+  //* Evento de formulário
   const registerContact = (e: FormEvent) => {
-    //* Retirando reload da pagina ao efetuar o submit
-    e.preventDefault()
+    e.preventDefault();
 
-    dispatch(
-      //* Reducer que irá adicionar um contato.
-      //* Recebe os valores digitados nos campos inputs
-      //* que foram armazenados nos estados de cada dado
-      register({
+    //* Se a ação do usuário for de registro,
+    //* vamos adicionar o contato e seleciona-lo
+    if (userAction === "isRegister") {
+      const newContact = {
+        id: contactList.length + 1,
         name,
         telephone,
         email,
-        colorContact: randomColor
-      })
-    )
+        colorContact: randomColor,
+      }
 
-    setStateContact(false, true)
+      //* Dispatch para registrar um novo contato
+      dispatch(register(newContact))
+
+      //* Atualização do contato selecionado após o registro
+      dispatch(setSelectedContact(newContact))
+    } else {
+      //* Caso contrário a ação deve ser de edição,
+      //* portanto verificamos se há um contato selecionado
+      //* para então atualiza-lo.
+      if (selectedContact) {
+        dispatch(
+          update({
+            id: selectedContact.id,
+            name,
+            telephone,
+            email,
+            colorContact: selectedContact.colorContact,
+          })
+        )
+      }
+    }
+    //* Dispatch para mudar o modo de exibição após edição/cadastro
+    dispatch(setUserAction({ userAction: "isViewing" }))
   }
 
   const borderNone = { border: 'none' }
 
   return (
     <S.Contact>
-      <S.ContactHeader />
+      <S.ContactHeader>
+        <S.BtnBack
+          type="button"
+          onClick={() => {
+            dispatch(setUserAction({ userAction: undefined }))
+            dispatch(setSelectedContact(undefined))
+          }}
+        >
+          <IconBack />
+        </S.BtnBack>
+      </S.ContactHeader>
       <S.AvatarLG
-        color={isEditing ? randomColor : selectedContact?.colorContact}
+      //* Caso esteja registrando um novo número, a cor do avatar será
+      //* aleatoria, no contrário irá exibir a cor já registrada no contato selecionado
+        color={userAction === "isRegister" ? randomColor : selectedContact?.colorContact}
       >
-        {getFirstLetterUpper(
-          selectedContact === undefined ? '' : selectedContact.name
-        )}
+        {getFirstLetterUpper(name)}
       </S.AvatarLG>
       <S.Form onSubmit={registerContact}>
         <S.Label>
@@ -109,8 +145,8 @@ const ContainerContact = () => {
             id="name"
             placeholder="Nome"
             onChange={(e) => setName(e.target.value)}
-            disabled={isEditing ? false : true}
-            value={selectedContact === undefined ? name : selectedContact.name}
+            disabled={userAction === "isViewing" ? true : false}
+            value={name}
           />
         </S.Label>
         <S.Label>
@@ -120,18 +156,9 @@ const ContainerContact = () => {
             type="number"
             id="telephone"
             placeholder="Telefone"
-            onChange={(e) => {
-              const value = e.target.valueAsNumber
-              if (!isNaN(value)) {
-                setTelephone(value)
-              }
-            }}
-            disabled={isEditing ? false : true}
-            value={
-              selectedContact === undefined
-                ? telephone
-                : selectedContact.telephone
-            }
+            onChange={(e) => {setTelephone(e.target.valueAsNumber)}}
+            disabled={userAction === "isViewing" ? true : false}
+            value={telephone}
           />
         </S.Label>
         <S.Label>
@@ -142,14 +169,12 @@ const ContainerContact = () => {
             id="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
-            disabled={isEditing ? false : true}
-            value={
-              selectedContact === undefined ? email : selectedContact.email
-            }
+            disabled={userAction === "isViewing" ? true : false}
+            value={email}
           />
         </S.Label>
         <S.ContactFooter>
-          {isEditing ? (
+          {userAction !== "isViewing" ? (
             <S.BtnContact style={borderNone} type="submit">
               Salvar
             </S.BtnContact>
@@ -158,17 +183,16 @@ const ContainerContact = () => {
               style={borderNone}
               type="button"
               onClick={(e) => {
-                //* desativando o comportamento padrão para evitar o submit
                 e.preventDefault()
-                setStateContact(true, false)}}
+                dispatch(setUserAction({userAction: "isEditing"}))}}
             >
               Editar
             </S.BtnContact>
           )}
-          {isEditing ? (
+          {userAction !== "isViewing" ? (
             <S.BtnContact
               type="reset"
-              onClick={() => setStateContact(false, false)}
+              onClick={() => dispatch(setUserAction({userAction: undefined}))}
             >
               Cancelar
             </S.BtnContact>
@@ -176,12 +200,9 @@ const ContainerContact = () => {
             <S.BtnContact
               type="button"
               onClick={() => {
-                if (
-                  typeof selectedContact?.telephone !== 'string' &&
-                  selectedContact?.telephone !== undefined
-                ) {
-                  dispatch(remove(selectedContact?.telephone))
-                  setStateContact(false, false)
+                if (selectedContact) {
+                  dispatch(remove(selectedContact))
+                  dispatch(setUserAction({ userAction: undefined }))
                 }
               }}
             >

@@ -10,30 +10,35 @@ type ContactsState = {
 const initialState: ContactsState = {
   itens: [
     {
+      id: 1,
       name: 'Fulano',
       telephone: 99999999999,
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
+      id: 2,
       name: 'Beltrano',
       telephone: 99999999998,
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
+      id: 3,
       name: 'Ciclano',
       telephone: 99999999997,
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
+      id: 4,
       name: 'Alano',
       telephone: 99999999996,
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
+      id: 5,
       name: 'Daltrano',
       telephone: 99999999995,
       email: 'example00@email.com',
@@ -47,38 +52,47 @@ const ContactsSlice = createSlice({
   name: 'Contacts',
   initialState,
   reducers: {
-    //* Reducer que irá verificar se já existe um contato com o mesmo
-    //* numero e caso não tiver irá adicionar esse novo contato
+    //* Reducer que irá registrar um contato
     register: (state, action: PayloadAction<Contact>) => {
-      //* Conferindo se o numero já foi registrado
-      const numberRegistered = state.itens.find(
-        (contact) => contact.telephone === action.payload.telephone
-      )
-      //* Caso já estiver registrado retorna um alert avisando o user
-      if (numberRegistered) {
-        alert('Já existe um contato com esse numero de telefone.')
+      //* Validando o número de celular registrado
+      const isNewNumber = state.itens.find(
+        (contact) => contact.telephone === action.payload.telephone)
+      //* Caso não seja um novo número, exibe um alerta
+      if (isNewNumber !== undefined) {
+        alert("Esse número de telefone esta registrado em outro contato")
       } else {
-        //* Passando pela validação usamos o push para adicionar o novo contato
+      //* Se não houver duplicação de número, adiciona o novo contato
+        state.itens.push(action.payload)
+      }
+    },
+    update: (state, action: PayloadAction<Contact>) => {
+      //* Verifica se há um contato selecionado para edição
+      if (state.selectedContact) {
+        //* Filtra os contatos mantendo todos exceto o contato selecionado
+        state.itens = state.itens.filter(
+          (contact) => contact.id !== state.selectedContact?.id
+        )
+        //* Adiciona o contato atualizado à lista de contatos
         state.itens.push(action.payload)
       }
     },
     //* Reducer responsável por remover um contato
-    remove: (state, action: PayloadAction<number>) => {
-      //* Filtramos os contatos para retirar o contato de acordo com o numero
+    remove: (state, action: PayloadAction<Contact>) => {
+      //* Filtramos os contatos para retirar o contato de acordo com o id
       state.itens = state.itens.filter(
-        (contacts) => contacts.telephone !== action.payload
+        (contact) => contact.id !== action.payload.id
       )
       //* Limpando nosso estado temporário após remover o contato
-      state.selectedContact = undefined
+      state.selectedContact = undefined;
     },
     //* Reducer responsável por passar as informações do contato selecionado
-    setSelectedContact: (state, action: PayloadAction<Contact>) => {
+    setSelectedContact: (state, action: PayloadAction<Contact | undefined>) => {
       //* Vamos preencher nosso estado temporário selectedContact
       //* com as informações do contato selecionado
-      state.selectedContact = action.payload
-    }
+      state.selectedContact = action.payload || undefined;
+    },
   }
 })
 
-export const { register, remove, setSelectedContact } = ContactsSlice.actions
+export const { register, update, remove, setSelectedContact } = ContactsSlice.actions
 export default ContactsSlice.reducer

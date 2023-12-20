@@ -8,15 +8,15 @@ import { ContainerMain } from './style'
 import BtnAddContact from '../../components/BtnAddContact'
 
 const Main = () => {
-  const { isEditing, isViewing } = useSelector(
-    (state: RootReducer) => state.tabContent
+  const { userAction } = useSelector(
+    (state: RootReducer) => state.userActions
   )
 
   return (
     <ContainerMain>
       <SideBar />
       <AdjacentSideBar />
-      {!isEditing && !isViewing && <BtnAddContact />}
+      {userAction === undefined && <BtnAddContact />}
     </ContainerMain>
   )
 }

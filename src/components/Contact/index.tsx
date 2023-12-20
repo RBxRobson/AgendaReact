@@ -1,23 +1,18 @@
 import { useDispatch } from 'react-redux'
 
+import ContactType from '../../models/Contact'
 import * as S from './style'
 import IconMore from '../../assets/componentsSVG/IconMore'
-import { displayContent } from '../../redux/reducers/tabContent'
+import { setUserAction } from '../../redux/reducers/userActions'
 import { setSelectedContact } from '../../redux/reducers/contacts'
 
-type Props = {
-  name: string
-  colorContact: string
-  telephone: number
-  email: string
-}
 
-const Contact = ({ name, colorContact, telephone, email }: Props) => {
+const Contact = ({ id, name, colorContact, telephone, email }: ContactType) => {
   const dispatch = useDispatch()
 
   const viewingContact = () => {
-    dispatch(displayContent({ isEditing: false, isViewing: true }))
-    dispatch(setSelectedContact({ name, colorContact, telephone, email }))
+    dispatch(setUserAction({ userAction: "isViewing" }))
+    dispatch(setSelectedContact({ id, name, colorContact, telephone, email }))
   }
 
   return (

@@ -6,8 +6,8 @@ import { StyledAdjacentSideBar } from './style'
 import { RootReducer } from '../../redux'
 
 const AdjacentSideBar = () => {
-  const { isEditing, isViewing } = useSelector(
-    (state: RootReducer) => state.tabContent
+  const { userAction } = useSelector(
+    (state: RootReducer) => state.userActions
   )
 
   return (
@@ -15,7 +15,7 @@ const AdjacentSideBar = () => {
       <AnimationSmartphone />
       {
         //* Mostra as informações do contato de acordo com o modo de exibição
-        (isEditing || isViewing) && <ContactForm />
+        userAction !== undefined && <ContactForm />
       }
     </StyledAdjacentSideBar>
   )

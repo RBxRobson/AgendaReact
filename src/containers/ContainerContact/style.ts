@@ -35,6 +35,20 @@ export const ContactHeader = styled.header`
   background-color: #e9ebff;
 `
 
+//* Botão de retorno do contato
+export const BtnBack = styled.button`
+ //* Default
+ cursor: pointer;
+ padding: 0;
+ border: none;
+ background: transparent;
+
+ //* Posicionando o botão no canto superior esquerdo do header
+ position: absolute;
+ top: 10px;
+ left: 10px;
+`
+
 //* Avatar maior *\\
 export const AvatarLG = styled(Avatar)`
   //* Tamanho do avatar e sua fonte *\\

@@ -2,13 +2,13 @@ import { useDispatch } from 'react-redux'
 
 import SvgAddContact from '../../assets/images/contact-new-svgrepo-com.svg'
 import { Button } from './style'
-import { displayContent } from '../../redux/reducers/tabContent'
+import { setUserAction } from '../../redux/reducers/userActions'
 
 const BtnAddContact = () => {
   const dispatch = useDispatch()
 
   const addContact = () => {
-    dispatch(displayContent({ isEditing: true, isViewing: false }))
+    dispatch(setUserAction({ userAction: "isRegister" }))
   }
 
   return (
