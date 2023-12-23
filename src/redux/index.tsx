@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import contactsReducer from './reducers/contacts'
 import userActionsReducer from './reducers/userActions'
+import filterReducer from './reducers/filter'
 
 //* Criando nossa store para fazer uso do redux *\\
 const store = configureStore({
   reducer: {
     contacts: contactsReducer,
-    userActions: userActionsReducer
+    userActions: userActionsReducer,
+    filter: filterReducer
   }
 })
 
