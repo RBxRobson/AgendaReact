@@ -2,8 +2,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FormEvent, useEffect, useState } from 'react'
 
 import { RootReducer } from '../../redux'
-import { register, update, remove, setSelectedContact } from '../../redux/reducers/contacts'
 import { setUserAction } from '../../redux/reducers/userActions'
+import {
+  register,
+  update,
+  remove,
+  setSelectedContact
+} from '../../redux/reducers/contacts'
 
 import * as S from './style'
 import IconBack from '../../assets/componentsSVG/IconBack'
@@ -17,14 +22,12 @@ const ContainerContact = () => {
   const selectedContact = useSelector(
     (state: RootReducer) => state.contacts.selectedContact
   )
+
   //* Acessando nossa lista de contatos
-  const contactList = useSelector(
-    (state: RootReducer) => state.contacts.itens
-  )
+  const contactList = useSelector((state: RootReducer) => state.contacts.itens)
+
   //* Acessando o estado responsável por gerenciar as ações do user
-  const { userAction } = useSelector(
-    (state: RootReducer) => state.userActions
-  )
+  const { userAction } = useSelector((state: RootReducer) => state.userActions)
 
   //* Armazenando dados dos campos inputs
   const [name, setName] = useState('')
@@ -76,17 +79,27 @@ const ContainerContact = () => {
 
   //* Evento de formulário
   const registerContact = (e: FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     //* Se a ação do usuário for de registro,
     //* vamos adicionar o contato e seleciona-lo
-    if (userAction === "isRegister") {
+    if (userAction === 'isRegister') {
       const newContact = {
         id: contactList.length + 1,
         name,
         telephone,
         email,
-        colorContact: randomColor,
+        colorContact: randomColor
+      }
+
+      //* Validando o número de celular registrado
+      const isNewNumber = contactList.find(
+        (contact) => contact.telephone === telephone
+      )
+      //* Caso não seja um novo número, exibe um alerta
+      if (isNewNumber !== undefined) {
+        alert('Esse número de telefone esta registrado em outro contato')
+        return
       }
 
       //* Dispatch para registrar um novo contato
@@ -105,13 +118,13 @@ const ContainerContact = () => {
             name,
             telephone,
             email,
-            colorContact: selectedContact.colorContact,
+            colorContact: selectedContact.colorContact
           })
         )
       }
     }
     //* Dispatch para mudar o modo de exibição após edição/cadastro
-    dispatch(setUserAction({ userAction: "isViewing" }))
+    dispatch(setUserAction({ userAction: 'isViewing' }))
   }
 
   const borderNone = { border: 'none' }
@@ -130,51 +143,59 @@ const ContainerContact = () => {
         </S.BtnBack>
       </S.ContactHeader>
       <S.AvatarLG
-      //* Caso esteja registrando um novo número, a cor do avatar será
-      //* aleatoria, no contrário irá exibir a cor já registrada no contato selecionado
-        color={userAction === "isRegister" ? randomColor : selectedContact?.colorContact}
+        //* Caso esteja registrando um novo número, a cor do avatar será
+        //* aleatória, no contrário irá exibir a cor já registrada no contato selecionado
+        color={
+          userAction === 'isRegister'
+            ? randomColor
+            : selectedContact?.colorContact
+        }
       >
         {getFirstLetterUpper(name)}
       </S.AvatarLG>
       <S.Form onSubmit={registerContact}>
-        <S.Label>
-          <IconContact />
-          <S.Input
-            required
-            type="text"
-            id="name"
-            placeholder="Nome"
-            onChange={(e) => setName(e.target.value)}
-            disabled={userAction === "isViewing" ? true : false}
-            value={name}
-          />
-        </S.Label>
-        <S.Label>
-          <IconTelephone />
-          <S.Input
-            required
-            type="number"
-            id="telephone"
-            placeholder="Telefone"
-            onChange={(e) => {setTelephone(e.target.valueAsNumber)}}
-            disabled={userAction === "isViewing" ? true : false}
-            value={telephone}
-          />
-        </S.Label>
-        <S.Label>
-          <IconEmail />
-          <S.Input
-            required
-            type="email"
-            id="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={userAction === "isViewing" ? true : false}
-            value={email}
-          />
-        </S.Label>
+        <S.FormControl>
+          <S.Label>
+            <IconContact />
+            <S.Input
+              required
+              type="text"
+              id="name"
+              placeholder="Nome"
+              onChange={(e) => setName(e.target.value)}
+              disabled={userAction === 'isViewing' ? true : false}
+              value={name}
+            />
+          </S.Label>
+          <S.Label>
+            <IconTelephone />
+            <S.Input
+              required
+              type="number"
+              id="telephone"
+              placeholder="Telefone"
+              onChange={(e) => {
+                setTelephone(e.target.valueAsNumber)
+              }}
+              disabled={userAction === 'isViewing' ? true : false}
+              value={telephone}
+            />
+          </S.Label>
+          <S.Label>
+            <IconEmail />
+            <S.Input
+              required
+              type="email"
+              id="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={userAction === 'isViewing' ? true : false}
+              value={email}
+            />
+          </S.Label>
+        </S.FormControl>
         <S.ContactFooter>
-          {userAction !== "isViewing" ? (
+          {userAction !== 'isViewing' ? (
             <S.BtnContact style={borderNone} type="submit">
               Salvar
             </S.BtnContact>
@@ -184,15 +205,19 @@ const ContainerContact = () => {
               type="button"
               onClick={(e) => {
                 e.preventDefault()
-                dispatch(setUserAction({userAction: "isEditing"}))}}
+                dispatch(setUserAction({ userAction: 'isEditing' }))
+              }}
             >
               Editar
             </S.BtnContact>
           )}
-          {userAction !== "isViewing" ? (
+          {userAction !== 'isViewing' ? (
             <S.BtnContact
               type="reset"
-              onClick={() => dispatch(setUserAction({userAction: undefined}))}
+              onClick={() => {
+                dispatch(setUserAction({ userAction: undefined }))
+                dispatch(setSelectedContact(undefined))
+              }}
             >
               Cancelar
             </S.BtnContact>
