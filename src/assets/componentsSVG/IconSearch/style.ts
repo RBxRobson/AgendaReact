@@ -4,7 +4,5 @@ import styled from 'styled-components'
 export const IconSearch = styled.svg`
   //* Tamanho e posicionamento *\\
   width: 30px;
-  position: absolute;
-  left: 12%;
   stroke: #ccc;
 `
