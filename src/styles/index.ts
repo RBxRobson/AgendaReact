@@ -10,7 +10,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    min-height: 100vh;
     background-color: #e9ebff;
   }
 `
@@ -18,7 +17,7 @@ export default GlobalStyles
 
 //* Container usado
 export const Container = styled.div`
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
   padding: 0 20px;
 `

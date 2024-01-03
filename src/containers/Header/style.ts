@@ -15,14 +15,22 @@ export const Header = styled.header`
 export const IconAgenda = styled.img`
   width: 70px;
   transition: 250ms ease-out;
+
+  @media (max-width: 399px) {
+    width: 60px;
+  }
 `
 
 //* Titulo do header *\\
 export const TitleHeader = styled.h1`
   //* Estilos aplicados na fonte */
   font-weight: bold;
-  font-size: 36px;
+  font-size: 2rem;
   color: var(--color-white-default);
+
+  @media (max-width: 399px) {
+    font-size: 1.8rem;
+  }
 
   //* Centralizando verticalmente *\\
   display: flex;
@@ -54,4 +62,8 @@ export const HeaderContainer = styled(Container)`
   justify-content: space-between;
   align-items: center;
   position: relative;
+
+  @media (max-width: 399px) {
+    padding: 0 0.5rem;
+  }
 `

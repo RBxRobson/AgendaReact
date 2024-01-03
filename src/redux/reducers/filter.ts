@@ -2,12 +2,12 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 //* Criando a tipagem para o filtro *\\
 type FilterType = {
-  contactName: string 
+  contactName: string
 }
 
 //* Estado inicial *\\
 const initialState: FilterType = {
-  contactName: '',
+  contactName: ''
 }
 
 //* Criando nosso slice para o Filtro *\\

@@ -12,6 +12,4 @@ export const StyledAdjacentSideBar = styled.div`
   position: relative;
 
   background-color: var(--color-white-default);
-  border: 2px solid var(--color-primary);
-  border-left: none;
 `
