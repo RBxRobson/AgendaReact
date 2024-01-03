@@ -23,7 +23,7 @@ export const LogoStyle = styled.div`
   font-family:
     Lobster Two,
     cursive;
-  font-size: 28px;
+  font-size: 2rem;
   text-shadow: 0 0 10px var(--color-white-default);
 
   //* Alinhamento do texto no centro */
@@ -39,6 +39,12 @@ export const LogoStyle = styled.div`
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
+
+  @media (max-width: 399px) {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
 
   //* Before usado para criar a box que irá dar o efeito borda animada ao logo */
   &::before {
@@ -71,6 +77,12 @@ export const LogoStyle = styled.div`
     //* Tamanho e formato da box sobreposta ao before, aqui define-se o tamanho da borda */
     width: 64px;
     height: 64px;
+
+    @media (max-width: 399px) {
+      width: 54px;
+      height: 54px;
+    }
+
     border-radius: 50%;
     border: 1px solid var(--color-white-default);
 

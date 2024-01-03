@@ -7,9 +7,9 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   background-color: var(--color-primary);
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
   z-index: 2;
 
   img {

@@ -7,6 +7,15 @@ export const Contact = styled.div`
   width: 100%;
   height: 100%;
 
+  @media (max-width: 899px) {
+    min-height: 100vh;
+  }
+
+  @media (max-height: 750px) and (min-width: 900px) {
+    max-height: calc(100vh - 150px);
+    overflow-y: scroll;
+  }
+
   //* Ajustando a camada de sobreposição *\\
   z-index: 1;
 
@@ -26,10 +35,7 @@ export const Contact = styled.div`
 export const ContactHeader = styled.header`
   //* Largura e altura *\\
   width: 100%;
-  height: 235px;
-
-  //* Margem inferior para criar espaço entre o cabeçalho e o formulário *\\
-  margin-bottom: 7rem;
+  min-height: 150px;
 
   //* Cor de fundo do cabeçalho *\\
   background-color: #e9ebff;
@@ -37,21 +43,22 @@ export const ContactHeader = styled.header`
 
 //* Botão de retorno do contato
 export const BtnBack = styled.button`
- //* Default
- cursor: pointer;
- padding: 0;
- border: none;
- background: transparent;
+  //* Default
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
 
- //* Posicionando o botão no canto superior esquerdo do header
- position: absolute;
- top: 10px;
- left: 10px;
+  //* Posicionando o botão no canto superior esquerdo do header
+  position: absolute;
+  top: 10px;
+  left: 10px;
 `
 
 //* Avatar maior *\\
 export const AvatarLG = styled(Avatar)`
   //* Tamanho do avatar e sua fonte *\\
+  margin: 0;
   width: 11rem;
   height: 11rem;
   font-size: 60px;
@@ -63,9 +70,26 @@ export const AvatarLG = styled(Avatar)`
 
 //* Formulário do contato *\\
 export const Form = styled.form`
-  //* Usando grid para layout do formulário *\\
-  display: block;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 899px) {
+    height: calc(100vh - 150px);
+    min-height: 470px;
+  }
+
+  @media (max-height: 750px) and (min-width: 900px) {
+    min-height: 450px;
+  }
+`
+
+export const FormControl = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
 `
 
@@ -74,10 +98,6 @@ export const Label = styled.label`
   //* Usando flex para layout da label *\\
   display: flex;
   padding: 0.5rem;
-  margin: 0 auto;
-
-  //* Largura da label *\\
-  max-width: 25rem;
 
   svg {
     padding: 0.5rem;
@@ -92,13 +112,17 @@ export const Input = styled.input`
   //* Tamanho da fonte e alinhamento do texto *\\
   font-size: 1.5rem;
 
-  //* Largura total, padding e margem automática *\\
+  @media (max-width: 399px) {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  //* padding
   max-width: 100%;
   padding: 0 8px;
 
   //* Removendo borda e adicionando uma borda inferior personalizada *\\
   outline: none;
-  border: none;
   border-radius: 0 12px 12px 0;
   border: 2px solid transparent;
 
@@ -114,18 +138,12 @@ export const Input = styled.input`
 
 //* Footer do contato com os botões do formulário *\\
 export const ContactFooter = styled.footer`
-  height: 100px;
-
   //* Cor de fundo do cabeçalho *\\
   background-color: #e9ebff;
 
-  //* Posicionando na parte inferior *\\
-  position: absolute;
-  bottom: 0px;
-
-  //* Usando flexbox para layout dos botões *\\
-  display: flex;
+  //* Usando flex para layout dos botões *\\
   width: 100%;
+  display: flex;
 `
 
 //* Setup básico do botão *\\
@@ -136,8 +154,9 @@ export const BtnContact = styled.button`
 
   //* Largura total e preenchimento *\\
   width: 100%;
+  padding: 2rem 0;
 
-  //* Margem à direita e borda arredondada *\\
+  //* Borda para divisão dos botões *\\
   border-left: 1px solid #aaa;
 
   //* Cor de fundo personalizada e estilos de texto *\\
