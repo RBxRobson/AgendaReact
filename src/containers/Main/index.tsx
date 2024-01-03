@@ -8,9 +8,7 @@ import { ContainerMain } from './style'
 import BtnAddContact from '../../components/BtnAddContact'
 
 const Main = () => {
-  const { userAction } = useSelector(
-    (state: RootReducer) => state.userActions
-  )
+  const { userAction } = useSelector((state: RootReducer) => state.userActions)
 
   return (
     <ContainerMain>

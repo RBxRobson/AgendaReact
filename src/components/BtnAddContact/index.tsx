@@ -8,7 +8,7 @@ const BtnAddContact = () => {
   const dispatch = useDispatch()
 
   const addContact = () => {
-    dispatch(setUserAction({ userAction: "isRegister" }))
+    dispatch(setUserAction({ userAction: 'isRegister' }))
   }
 
   return (

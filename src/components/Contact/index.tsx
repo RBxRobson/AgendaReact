@@ -6,12 +6,11 @@ import IconMore from '../../assets/componentsSVG/IconMore'
 import { setUserAction } from '../../redux/reducers/userActions'
 import { setSelectedContact } from '../../redux/reducers/contacts'
 
-
 const Contact = ({ id, name, colorContact, telephone, email }: ContactType) => {
   const dispatch = useDispatch()
 
   const viewingContact = () => {
-    dispatch(setUserAction({ userAction: "isViewing" }))
+    dispatch(setUserAction({ userAction: 'isViewing' }))
     dispatch(setSelectedContact({ id, name, colorContact, telephone, email }))
   }
 

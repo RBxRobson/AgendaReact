@@ -6,9 +6,7 @@ import { StyledAdjacentSideBar } from './style'
 import { RootReducer } from '../../redux'
 
 const AdjacentSideBar = () => {
-  const { userAction } = useSelector(
-    (state: RootReducer) => state.userActions
-  )
+  const { userAction } = useSelector((state: RootReducer) => state.userActions)
 
   return (
     <StyledAdjacentSideBar>
