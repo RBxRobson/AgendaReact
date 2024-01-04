@@ -12,98 +12,98 @@ const initialState: ContactsState = {
     {
       id: 1,
       name: 'Fulano',
-      telephone: 99999999999,
+      telephone: '99999999999',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 2,
       name: 'Beltrano',
-      telephone: 99999999998,
+      telephone: '99999999998',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 3,
       name: 'Ciclano',
-      telephone: 99999999997,
+      telephone: '99999999997',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 4,
       name: 'Alano',
-      telephone: 99999999996,
+      telephone: '99999999996',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 5,
       name: 'Daltrano',
-      telephone: 99999999995,
+      telephone: '99999999995',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 6,
       name: 'Fulano',
-      telephone: 99999999999,
+      telephone: '99999999999',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 7,
       name: 'Beltrano',
-      telephone: 99999999998,
+      telephone: '99999999998',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 8,
       name: 'Ciclano',
-      telephone: 99999999997,
+      telephone: '99999999997',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 9,
       name: 'Alano',
-      telephone: 99999999996,
+      telephone: '99999999996',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 10,
       name: 'Daltrano',
-      telephone: 99999999995,
+      telephone: '99999999995',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 11,
       name: 'Daltrano',
-      telephone: 99999999995,
+      telephone: '99999999995',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 12,
       name: 'Daltrano',
-      telephone: 99999999995,
+      telephone: '99999999995',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 13,
       name: 'Daltrano',
-      telephone: 99999999995,
+      telephone: '99999999995',
       email: 'example00@email.com',
       colorContact: '#444'
     },
     {
       id: 14,
       name: 'Daltrano',
-      telephone: 99999999995,
+      telephone: '99999999995',
       email: 'example00@email.com',
       colorContact: '#444'
     }

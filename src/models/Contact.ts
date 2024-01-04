@@ -1,14 +1,14 @@
 class Contact {
   id: number
   name: string
-  telephone: number | ' '
+  telephone: string
   email: string
   colorContact: string
 
   constructor(
     id: number,
     name: string,
-    telephone: number,
+    telephone: string,
     email: string,
     colorContact: string
   ) {

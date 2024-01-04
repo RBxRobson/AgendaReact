@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-type userActionType =  "isEditing" | "isViewing" | "isRegister" | undefined
+type userActionType = 'isEditing' | 'isViewing' | 'isRegister' | undefined
 
 interface userActions {
-  userAction: userActionType;
+  userAction: userActionType
 }
 
 const initialState: userActions = {
-  userAction: undefined,
+  userAction: undefined
 }
 
 const userActionSlice = createSlice({
