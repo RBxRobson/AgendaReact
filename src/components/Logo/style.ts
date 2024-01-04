@@ -24,7 +24,7 @@ export const LogoStyle = styled.div`
     Lobster Two,
     cursive;
   font-size: 2rem;
-  text-shadow: 0 0 10px var(--color-white-default);
+  text-shadow: 0 0 10px var(--white-default);
 
   //* Alinhamento do texto no centro */
   display: flex;
@@ -56,7 +56,7 @@ export const LogoStyle = styled.div`
     height: 0;
 
     //* Cor da borda animada do logo */
-    background: var(--color-white-default);
+    background: var(--white-default);
 
     //* Animação que causa o efeito borda animada */
     animation:
@@ -68,7 +68,7 @@ export const LogoStyle = styled.div`
   &::after {
     //* Conteúdo textual do logo, sua cor e posicionamento centralizado */
     content: 'RB';
-    color: var(--color-white-default);
+    color: var(--white-default);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -84,7 +84,7 @@ export const LogoStyle = styled.div`
     }
 
     border-radius: 50%;
-    border: 1px solid var(--color-white-default);
+    border: 1px solid var(--white-default);
 
     //* Cor do background do logo e borda simples para melhorar seu destaque no layout */
     background: var(--color-primary);

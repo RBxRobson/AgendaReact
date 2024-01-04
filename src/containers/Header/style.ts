@@ -2,16 +2,16 @@ import { styled } from 'styled-components'
 import { Container } from '../../styles'
 
 export const Header = styled.header`
-  //* Container cabeçalho *\
   width: 100%;
   height: 150px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background-color: var(--color-primary);
 `
 
-//* Ícone usado no titulo *\\
 export const IconAgenda = styled.img`
   width: 70px;
   transition: 250ms ease-out;
@@ -21,18 +21,15 @@ export const IconAgenda = styled.img`
   }
 `
 
-//* Titulo do header *\\
 export const TitleHeader = styled.h1`
-  //* Estilos aplicados na fonte */
   font-weight: bold;
   font-size: 2rem;
-  color: var(--color-white-default);
+  color: var(--white-default);
 
   @media (max-width: 399px) {
     font-size: 1.8rem;
   }
 
-  //* Centralizando verticalmente *\\
   display: flex;
   align-items: center;
 
@@ -44,19 +41,17 @@ export const TitleHeader = styled.h1`
   }
 `
 
-//* Texto marcado usado no titulo do header *\\
 export const HighlightedText = styled.span`
   font-family:
     Lobster Two,
     cursive;
-  color: var(--color-secondary);
+  color: var(--color-primary-darken);
   text-shadow:
-    -2px 2px 4px var(--color-white-default),
-    2px -2px 4px var(--color-white-default);
+    -2px 2px 4px var(--white-default),
+    2px -2px 4px var(--white-default);
   margin: 0 2px;
 `
 
-//* Container do cabeçalho *\\
 export const HeaderContainer = styled(Container)`
   display: flex;
   justify-content: space-between;

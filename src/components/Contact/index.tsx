@@ -15,12 +15,12 @@ const Contact = ({ id, name, colorContact, telephone, email }: ContactType) => {
   }
 
   return (
-    <S.Contact>
+    <S.Contact onClick={viewingContact}>
       <S.Details>
         <S.Avatar color={colorContact}>{name.charAt(0).toUpperCase()}</S.Avatar>
         <S.Name>{name}</S.Name>
       </S.Details>
-      <S.BtnView onClick={viewingContact}>
+      <S.BtnView>
         <IconMore />
       </S.BtnView>
     </S.Contact>

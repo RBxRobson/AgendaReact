@@ -1,8 +1,8 @@
 const IconBack = () => {
   return (
     <svg
-      fill="#a5a5a5"
-      width="30px"
+      fill="#ccc"
+      width="32px"
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"

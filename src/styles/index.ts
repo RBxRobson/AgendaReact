@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: Open Sans, sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {

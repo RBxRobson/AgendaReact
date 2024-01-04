@@ -78,6 +78,34 @@ const initialState: ContactsState = {
       telephone: 99999999995,
       email: 'example00@email.com',
       colorContact: '#444'
+    },
+    {
+      id: 11,
+      name: 'Daltrano',
+      telephone: 99999999995,
+      email: 'example00@email.com',
+      colorContact: '#444'
+    },
+    {
+      id: 12,
+      name: 'Daltrano',
+      telephone: 99999999995,
+      email: 'example00@email.com',
+      colorContact: '#444'
+    },
+    {
+      id: 13,
+      name: 'Daltrano',
+      telephone: 99999999995,
+      email: 'example00@email.com',
+      colorContact: '#444'
+    },
+    {
+      id: 14,
+      name: 'Daltrano',
+      telephone: 99999999995,
+      email: 'example00@email.com',
+      colorContact: '#444'
     }
   ],
   selectedContact: undefined
