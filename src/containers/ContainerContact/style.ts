@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { Avatar } from '../../components/Contact/style'
 
 export const Contact = styled.div`

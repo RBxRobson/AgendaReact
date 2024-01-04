@@ -30,7 +30,6 @@ const ContactList = () => {
     }
   }
   const contacts = filterContacts()
-  console.log(contacts)
 
   return (
     <S.ContactList>

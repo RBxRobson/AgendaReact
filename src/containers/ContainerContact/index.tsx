@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux'
 import { FormEvent, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { RootReducer } from '../../redux'
 import { setUserAction } from '../../redux/reducers/userActions'
@@ -17,24 +17,27 @@ import IconTelephone from '../../assets/componentsSVG/IconTelephone'
 import IconEmail from '../../assets/componentsSVG/IconEmail'
 
 const ContainerContact = () => {
+  const borderNone = { border: 'none' }
+
   const dispatch = useDispatch()
   //* Acessando nosso estado temporário do contato selecionado
   const selectedContact = useSelector(
     (state: RootReducer) => state.contacts.selectedContact
   )
 
-  //* Acessando nossa lista de contatos
+  //* Acessa nossa lista de contatos
   const contactList = useSelector((state: RootReducer) => state.contacts.itens)
 
-  //* Acessando o estado responsável por gerenciar as ações do user
+  //* Acessa o estado responsável por gerenciar as ações do user
   const { userAction } = useSelector((state: RootReducer) => state.userActions)
 
-  //* Armazenando dados dos campos inputs
+  //* Armazena dados dos campos inputs
   const [name, setName] = useState('')
-  const [telephone, setTelephone] = useState<number | ' '>(' ')
+  const [telephone, setTelephone] = useState('')
+  const [formattedTelephone, setFormattedTelephone] = useState('')
   const [email, setEmail] = useState('')
 
-  //* Atualizando os dados dos inputs de acordo com o contato selecionado
+  //* Atualiza os dados dos inputs de acordo com o contato selecionado
   useEffect(() => {
     if (selectedContact !== undefined) {
       setName(selectedContact.name)
@@ -77,7 +80,6 @@ const ContainerContact = () => {
     return FirstLetterUpper
   }
 
-  //* Evento de formulário
   const registerContact = (e: FormEvent) => {
     e.preventDefault()
 
@@ -127,7 +129,40 @@ const ContainerContact = () => {
     dispatch(setUserAction({ userAction: 'isViewing' }))
   }
 
-  const borderNone = { border: 'none' }
+  const formatPhoneNumber = (phoneNumber: string) => {
+    //* Remove todos os caracteres não numéricos do input
+    const cleaned = phoneNumber.replace(/\D/g, '')
+
+    let formatted = ''
+
+    //* Aplica a formatação do telefone
+    const setTypePhone = (x: number, y: number) => {
+      if (cleaned.length > 0) {
+        formatted += `(${cleaned.slice(0, 2)}`
+      }
+      if (cleaned.length > 2) {
+        formatted += `) ${cleaned.slice(2, x)}`
+      }
+      if (cleaned.length > x) {
+        formatted += `-${cleaned.slice(x, y)}`
+      }
+      setFormattedTelephone(formatted)
+    }
+
+    //* Decide a formatação com base no comprimento do número
+    if (cleaned.length === 10) {
+      //* Números fixos, traço após o 6º dígito
+      setTypePhone(6, 10)
+    } else {
+      //* Números móveis, traço após o 7º dígito
+      setTypePhone(7, 11)
+    }
+  }
+
+  //* Acompanha a alteração do input para disparar a função de formatação
+  useEffect(() => {
+    formatPhoneNumber(telephone)
+  }, [telephone])
 
   return (
     <S.Contact>
@@ -171,14 +206,14 @@ const ContainerContact = () => {
             <IconTelephone />
             <S.Input
               required
-              type="number"
+              type="text"
               id="telephone"
               placeholder="Telefone"
               onChange={(e) => {
-                setTelephone(e.target.valueAsNumber)
+                setTelephone(e.target.value)
               }}
               disabled={userAction === 'isViewing' ? true : false}
-              value={telephone}
+              value={formattedTelephone}
             />
           </S.Label>
           <S.Label>
