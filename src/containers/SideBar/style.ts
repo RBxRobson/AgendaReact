@@ -24,7 +24,7 @@ export const SearchInput = styled.input`
   background-color: transparent;
 `
 
-export const InputBox = styled.div`
+export const InputBox = styled.label`
   position: relative;
   width: 80%;
   gap: 0.5rem;
