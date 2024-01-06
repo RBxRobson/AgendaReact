@@ -6,8 +6,8 @@ export const ContainerMain = styled.main`
   max-width: 1600px;
   min-height: calc(100vh - 150px);
 
-  border-right: 2px solid var(--color-primary);
-  border-left: 2px solid var(--color-primary);
+  border-right: 2px solid var(--black-soft);
+  border-left: 2px solid var(--black-soft);
 
   display: flex;
   margin: 0 auto;

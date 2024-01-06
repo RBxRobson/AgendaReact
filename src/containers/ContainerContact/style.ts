@@ -16,7 +16,6 @@ export const Contact = styled.div`
     overflow-y: scroll;
   }
 
-  z-index: 1;
   position: relative;
 
   display: flex;

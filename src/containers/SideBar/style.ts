@@ -9,7 +9,8 @@ export const SideBar = styled.aside`
   padding: 1.5rem 0;
 
   background-color: var(--white-default);
-  border-right: 2px solid var(--color-primary);
+  border-right: 2px solid var(--black-soft);
+  z-index: 1;
 `
 
 export const SearchInput = styled.input`
@@ -34,7 +35,6 @@ export const InputBox = styled.label`
   align-items: center;
   margin: 0 auto;
 
-  //* Espaçamento entre a lista de contatos
   margin-bottom: 1.5rem;
 
   background-color: var(--color-input);

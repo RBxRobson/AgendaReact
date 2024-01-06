@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #e9ebff;
+    background-color: var(--white-darken);
   }
 `
 export default GlobalStyles

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Button = styled.button`
   border: none;
   cursor: pointer;
-  background-color: var(--color-primary);
+  background-color: var(--color-btn);
 
   width: 60px;
   height: 60px;
