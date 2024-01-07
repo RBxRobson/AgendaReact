@@ -35,11 +35,6 @@ export const TitleHeader = styled.h1`
 
   display: flex;
   align-items: center;
-
-  background-color: green;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: bottom;
 `
 
 export const HighlightedText = styled.span`
