@@ -30,7 +30,8 @@ export const ContactHeader = styled.header`
   width: 100%;
   min-height: 150px;
 
-  background-color: var(--color-primary-lighter);
+  background-color: ${(props) => props.color};
+  filter: brightness(0.85);
 `
 
 export const BtnBack = styled.button`
@@ -38,7 +39,6 @@ export const BtnBack = styled.button`
   padding: 0;
   border: none;
   background: transparent;
-  filter: brightness(0.92);
 
   position: absolute;
   top: 8px;
@@ -46,7 +46,7 @@ export const BtnBack = styled.button`
 
   &&:hover,
   &&:active {
-    filter: brightness(0.86);
+    filter: brightness(0.85);
   }
 `
 
@@ -58,6 +58,8 @@ export const AvatarLG = styled(Avatar)`
 
   position: absolute;
   top: 2.2rem;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
 `
 
 export const Form = styled.form`

@@ -52,9 +52,9 @@ const ContainerContact = () => {
   //* Função para criar uma cor aleatória para o avatar de cada contato
   function generateColor() {
     //* Gerando um valor aleatório para cada canal de cor (r,g,b)
-    const r = Math.floor(Math.random() * 150) + 75
-    const g = Math.floor(Math.random() * 150) + 75
-    const b = Math.floor(Math.random() * 150) + 75
+    const r = Math.floor(Math.random() * 150) + 100
+    const g = Math.floor(Math.random() * 150) + 100
+    const b = Math.floor(Math.random() * 150) + 100
 
     //* Construindo uma string no formato 'rgb(r, g, b)' com os valores gerados
     const newColor = `rgb(${r}, ${g}, ${b})`
@@ -166,7 +166,13 @@ const ContainerContact = () => {
 
   return (
     <S.Contact>
-      <S.ContactHeader>
+      <S.ContactHeader
+        color={
+          userAction === 'isRegister'
+            ? randomColor
+            : selectedContact?.colorContact
+        }
+      >
         <S.BtnBack
           type="button"
           onClick={() => {
