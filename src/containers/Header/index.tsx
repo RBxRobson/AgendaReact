@@ -1,7 +1,7 @@
 //* Importações internas *\\
 import Logo from '../../components/Logo'
 import * as S from './style'
-import SVGAgenda from '../../assets/images/icon-agenda.svg'
+import IconAgenda from '../../assets/componentsSVG/IconAgenda'
 
 const Header = () => {
   return (
@@ -9,10 +9,7 @@ const Header = () => {
       <S.HeaderContainer>
         <S.TitleHeader>
           <span>
-            <S.IconAgenda
-              src={SVGAgenda}
-              alt="ícone de uma agenda de contatos"
-            />
+            <IconAgenda />
           </span>
           Agenda<S.HighlightedText>Plus</S.HighlightedText>
         </S.TitleHeader>

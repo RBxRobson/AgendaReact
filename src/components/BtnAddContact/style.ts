@@ -5,6 +5,10 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: var(--color-btn);
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -14,7 +18,7 @@ export const Button = styled.button`
   right: 0.5rem;
   z-index: 2;
 
-  img {
+  svg {
     width: 60%;
   }
 
