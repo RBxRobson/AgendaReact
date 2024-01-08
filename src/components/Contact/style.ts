@@ -45,6 +45,7 @@ export const Avatar = styled.span`
 export const Name = styled.h2`
   font-weight: normal;
   padding-left: 8px;
+  color: var(--black-default);
 `
 
 export const BtnView = styled.button`

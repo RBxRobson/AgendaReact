@@ -31,12 +31,11 @@ export const ContactHeader = styled.header`
   min-height: 150px;
 
   background-color: ${(props) => props.color};
-  filter: brightness(0.85);
+  filter: var(--filter-darken);
 `
 
 export const BtnBack = styled.button`
   cursor: pointer;
-  padding: 0;
   border: none;
   background: transparent;
 
@@ -46,7 +45,7 @@ export const BtnBack = styled.button`
 
   &&:hover,
   &&:active {
-    filter: brightness(0.85);
+    filter: brightness(1.25);
   }
 `
 
@@ -92,10 +91,11 @@ export const Label = styled.label`
   padding: 0.5rem;
 
   svg {
+    border-radius: 12px 0 0 12px;
     padding: 0.5rem;
     width: 3rem;
-    background-color: var(--color-primary);
-    border-radius: 12px 0 0 12px;
+
+    background-color: var(--black-medium);
   }
 `
 
@@ -120,12 +120,13 @@ export const Input = styled.input`
   transition: all ease 150ms;
 
   &:focus {
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--black-medium);
   }
 `
 
 export const ContactFooter = styled.footer`
-  background-color: var(--color-primary-lighter);
+  background-color: ${(props) => props.color};
+  filter: var(--filter-darken);
 
   width: 100%;
   display: flex;
@@ -139,15 +140,16 @@ export const BtnContact = styled.button`
   padding: 2rem 0;
 
   //* Borda para divisão dos botões *\\
-  border-left: 2px solid var(--gray-soft);
+  border-left: 2px solid var(--black-soft);
 
   background-color: transparent;
   font-size: 22px;
+  color: var(--black-default);
 
   transition: all ease 200ms;
 
   &:hover,
   &:active {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `

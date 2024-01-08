@@ -1,15 +1,20 @@
 :root {
   --color-primary:  #7badde ;
-  --color-primary-darken: #5a92c9;
-  --color-primary-lighter:#becfe1;
+  --color-primary-darken: #6aa2da;
+  --color-primary-lighter:#0a325a;
 
   --white-default: #fff;
   --white-darken: #F6F5FA;
   --gray-soft: #ccc;
-  --black-soft: #333333;
+  --black-soft: #757575;
+  --black-medium: #4c4c4c;
+  --black-default: #313131;
 
   --color-input: #f3f3f3;
-  --color-btn: #779f13;
+  --color-btn: #a5d138;
+
+  --filter-darken: brightness(0.85);
+  --filter-lighter: brightness(1.25);
 }
 
 @font-face {

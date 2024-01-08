@@ -47,6 +47,10 @@ export const InputBox = styled.label`
     border: 2px solid var(--color-primary);
   }
 
+  &:focus-within svg {
+    stroke: var(--color-primary);
+  }
+
   @media (max-width: 899px) {
     max-width: 550px;
   }

@@ -15,15 +15,6 @@ export const Header = styled.header`
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 `
 
-export const IconAgenda = styled.img`
-  width: 70px;
-  transition: 250ms ease-out;
-
-  @media (max-width: 399px) {
-    width: 60px;
-  }
-`
-
 export const TitleHeader = styled.h1`
   font-weight: bold;
   font-size: 2rem;

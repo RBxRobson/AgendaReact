@@ -52,9 +52,9 @@ const ContainerContact = () => {
   //* Função para criar uma cor aleatória para o avatar de cada contato
   function generateColor() {
     //* Gerando um valor aleatório para cada canal de cor (r,g,b)
-    const r = Math.floor(Math.random() * 150) + 100
-    const g = Math.floor(Math.random() * 150) + 100
-    const b = Math.floor(Math.random() * 150) + 100
+    const r = Math.floor(Math.random() * 150) + 150
+    const g = Math.floor(Math.random() * 150) + 150
+    const b = Math.floor(Math.random() * 150) + 150
 
     //* Construindo uma string no formato 'rgb(r, g, b)' com os valores gerados
     const newColor = `rgb(${r}, ${g}, ${b})`
@@ -164,15 +164,13 @@ const ContainerContact = () => {
     formatPhoneNumber(telephone)
   }, [telephone])
 
+  //* Armazena o tema do contato, para novos contatos a cor é aleatória
+  const themeContact =
+    userAction === 'isRegister' ? randomColor : selectedContact?.colorContact
+
   return (
     <S.Contact>
-      <S.ContactHeader
-        color={
-          userAction === 'isRegister'
-            ? randomColor
-            : selectedContact?.colorContact
-        }
-      >
+      <S.ContactHeader color={themeContact}>
         <S.BtnBack
           type="button"
           onClick={() => {
@@ -183,22 +181,13 @@ const ContainerContact = () => {
           <IconBack />
         </S.BtnBack>
       </S.ContactHeader>
-      <S.AvatarLG
-        //* Caso esteja registrando um novo número, a cor do avatar será
-        //* aleatória, no contrário irá exibir a cor já registrada no contato selecionado
-        color={
-          userAction === 'isRegister'
-            ? randomColor
-            : selectedContact?.colorContact
-        }
-      >
-        {getFirstLetterUpper(name)}
-      </S.AvatarLG>
+      <S.AvatarLG color={themeContact}>{getFirstLetterUpper(name)}</S.AvatarLG>
       <S.Form onSubmit={registerContact}>
         <S.FormControl>
           <S.Label>
             <IconContact />
             <S.Input
+              color={themeContact}
               required
               type="text"
               id="name"
@@ -211,6 +200,7 @@ const ContainerContact = () => {
           <S.Label>
             <IconTelephone />
             <S.Input
+              color={themeContact}
               required
               type="text"
               id="telephone"
@@ -225,6 +215,7 @@ const ContainerContact = () => {
           <S.Label>
             <IconEmail />
             <S.Input
+              color={themeContact}
               required
               type="email"
               id="email"
@@ -235,7 +226,7 @@ const ContainerContact = () => {
             />
           </S.Label>
         </S.FormControl>
-        <S.ContactFooter>
+        <S.ContactFooter color={themeContact}>
           {userAction !== 'isViewing' ? (
             <S.BtnContact style={borderNone} type="submit">
               Salvar
