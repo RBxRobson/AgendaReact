@@ -11,101 +11,38 @@ const initialState: ContactsState = {
   itens: [
     {
       id: 1,
-      name: 'Fulano',
+      name: 'S.Exemplo',
       telephone: '99999999999',
       email: 'example00@email.com',
-      colorContact: '#444'
+      colorContact: '#A4A6E4'
     },
     {
       id: 2,
-      name: 'Beltrano',
+      name: 'T.Exemplo',
       telephone: '99999999998',
       email: 'example00@email.com',
-      colorContact: '#444'
+      colorContact: '#86A9FE'
     },
     {
       id: 3,
-      name: 'Ciclano',
+      name: 'F.Exemplo',
       telephone: '99999999997',
       email: 'example00@email.com',
-      colorContact: '#444'
+      colorContact: '#D085C0'
     },
     {
       id: 4,
-      name: 'Alano',
+      name: 'H.Exemplo',
       telephone: '99999999996',
       email: 'example00@email.com',
-      colorContact: '#444'
+      colorContact: '#79C4F0'
     },
     {
       id: 5,
-      name: 'Daltrano',
+      name: 'I.Exemplo',
       telephone: '99999999995',
       email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 6,
-      name: 'Fulano',
-      telephone: '99999999999',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 7,
-      name: 'Beltrano',
-      telephone: '99999999998',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 8,
-      name: 'Ciclano',
-      telephone: '99999999997',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 9,
-      name: 'Alano',
-      telephone: '99999999996',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 10,
-      name: 'Daltrano',
-      telephone: '99999999995',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 11,
-      name: 'Daltrano',
-      telephone: '99999999995',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 12,
-      name: 'Daltrano',
-      telephone: '99999999995',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 13,
-      name: 'Daltrano',
-      telephone: '99999999995',
-      email: 'example00@email.com',
-      colorContact: '#444'
-    },
-    {
-      id: 14,
-      name: 'Daltrano',
-      telephone: '99999999995',
-      email: 'example00@email.com',
-      colorContact: '#444'
+      colorContact: '#8D8BC3'
     }
   ],
   selectedContact: undefined
