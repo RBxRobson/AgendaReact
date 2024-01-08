@@ -12,6 +12,15 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: var(--white-darken);
+
+    //* Otimização de fonte
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings:
+    "cv11", "salt", "ss01", "ss03",
+    "cv01", "cv02", "cv03", "cv04",
+    "cv05", "cv06", "cv09", "cv10";
   }
 `
 export default GlobalStyles

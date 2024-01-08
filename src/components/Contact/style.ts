@@ -30,8 +30,8 @@ export const Avatar = styled.span`
   //* Fonte sans padrão para centralizar melhor
   font-family: sans-serif;
   font-size: 1.8rem;
-  color: var(--white-default);
-  text-shadow: 0 0 12px var(--white-default);
+  color: var(--white-darken);
+  text-shadow: 0 0 12px var(--white-darken);
 
   width: 52px;
   height: 52px;
