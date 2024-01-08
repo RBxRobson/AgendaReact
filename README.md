@@ -1,27 +1,36 @@
-# React + TypeScript + Vite
+# Projeto Agenda Plus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Imagem1](/public/Tela1.png)
+![Imagem2](/public/Tela2.png)
 
-Currently, two official plugins are available:
+## Layout Mobile
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p style="display: flex; justify-content: center; gap: 8px;">
+  <figure width="display: flex;">
+    <img src="/public/Tela3.png" width="300" style="margin-bottom: 8px;"/>
+    <figcaption>Layout Mobile 1</figcaption>
+  </figure>
+  <figure style="display: flex; flex-direction: column; align-items: center;">
+    <img src="/public/Tela4.png" width="300" style="margin-bottom: 8px;"/>
+    <figcaption>Layout Mobile 2</figcaption>
+  </figure>
+</p>
 
-## Expanding the ESLint configuration
+## Descrição do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este projeto é uma aplicação web de uma agenda de contatos simples, onde é possível visualizar, adicionar, editar e remover contatos. A aplicação permite exibir detalhes de cada contato selecionado, além de ser responsiva no mobile.
 
-- Configure the top-level `parserOptions` property like this:
+## Tecnologias Utilizadas
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)&nbsp;
+![React.js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)&nbsp;
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)&nbsp;
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)&nbsp;
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Funcionalidades
+
+- Adicionar um novo contato (nome, telefone, email, etc.).
+- Editar informações de um contato existente.
+- Remover um contato da agenda.
+- Visualizar detalhes de um contato específico.
