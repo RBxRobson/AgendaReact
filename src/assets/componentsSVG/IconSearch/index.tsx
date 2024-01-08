@@ -1,10 +1,10 @@
-import * as S from './style'
-
 const IconSearch = () => {
   return (
-    <S.IconSearch
+    <svg
       viewBox="0 0 24 24"
       fill="none"
+      width="30px"
+      stroke="var(--gray-soft)"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -21,7 +21,7 @@ const IconSearch = () => {
           strokeLinejoin="round"
         ></path>
       </g>
-    </S.IconSearch>
+    </svg>
   )
 }
 

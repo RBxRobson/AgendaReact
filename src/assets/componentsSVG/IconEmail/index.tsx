@@ -1,11 +1,6 @@
 const IconEmail = () => {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000"
-      width="30px"
-    >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30px">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
         id="SVGRepo_tracerCarrier"
@@ -20,7 +15,7 @@ const IconEmail = () => {
               <polyline
                 fill="none"
                 points="4 8.2 12 14.1 20 8.2"
-                stroke="#31373D"
+                stroke="var(--white-darken)"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
@@ -30,7 +25,7 @@ const IconEmail = () => {
                 height="14"
                 rx="2"
                 ry="2"
-                stroke="#31373D"
+                stroke="var(--white-darken)"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
