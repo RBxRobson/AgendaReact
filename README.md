@@ -12,7 +12,7 @@
 
 ## Descrição do Projeto
 
-Este projeto é uma aplicação web de uma agenda de contatos simples, onde é possível visualizar, adicionar, editar e remover contatos. A aplicação permite exibir detalhes de cada contato selecionado, além de ser responsiva no mobile.
+Este projeto é uma aplicação web de uma agenda de contatos simples, onde é possível visualizar, adicionar, editar e remover contatos.A aplicação permite exibir detalhes de cada contato selecionado, além de ser responsiva no mobile.
 
 ## Tecnologias Utilizadas
 
