@@ -6,14 +6,8 @@
 ## Layout Mobile
 
 <p style="display: flex; justify-content: center; gap: 8px;">
-  <figure width="display: flex;">
-    <img src="/public/Tela3.png" width="300" style="margin-bottom: 8px;"/>
-    <figcaption>Layout Mobile 1</figcaption>
-  </figure>
-  <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="/public/Tela4.png" width="300" style="margin-bottom: 8px;"/>
-    <figcaption>Layout Mobile 2</figcaption>
-  </figure>
+  <img src="/public/Tela3.png" width="300" />
+  <img src="/public/Tela4.png" width="300" />
 </p>
 
 ## Descrição do Projeto
