@@ -8,12 +8,12 @@
   --gray-soft: #ccc;
   --black-soft: #747474;
   --black-medium: #444444;
-  --black-default: #282828;
+  --black-default: #262626;
 
   --color-input: #f3f3f3;
   --color-btn: #a5d138;
 
-  --filter-darken: brightness(0.82);
+  --filter-darken: brightness(0.85);
   --filter-lighter: brightness(1.20);
 }
 
