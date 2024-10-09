@@ -15,10 +15,10 @@ A estrutura do projeto foi desenvolvida com React e TypeScript. Para garantir me
 <br/>
 <br/>
 
-## Link Demo: [Next Finance](https://project-next-finance.vercel.app/)
+## Link Demo: [Agenda Plus](https://agenda-plus-react.vercel.app/)
 
 <div align="center">
-  <a href="https://efood-rosy.vercel.app/" title="Clique e visite o projeto!">
+  <a href="https://agenda-plus-react.vercel.app/" title="Clique e visite o projeto!">
     <img src="./public/Tela1.png" style="max-width: 1300px; width: 100%;" alt="Next Finance">
   </a>
 </div>
