@@ -1,20 +1,8 @@
-# Projeto Agenda Plus
-
-## Layout Desktop
-
-![Imagem1](/public/Tela1.png)
-![Imagem2](/public/Tela2.png)
-
-## Layout Mobile
-
-<p style="display: flex; justify-content: center; gap: 8px;">
-  <img src="/public/Tela3.png" width="300" />
-  <img src="/public/Tela4.png" width="300" />
-</p>
-
-## Descrição do Projeto
-
-Este projeto é uma aplicação web de uma agenda de contatos simples, onde é possível visualizar, adicionar, editar e remover contatos.A aplicação permite exibir detalhes de cada contato selecionado, além de ser responsiva no mobile.
+# Agenda Plus
+Agenda Plus é uma aplicação web para gerenciamento de contatos, oferecendo recursos como visualização, adição, edição e remoção de contatos. A aplicação também permite exibir detalhes de cada contato selecionado, listar contatos em ordem alfabética, realizar buscas rápidas por meio de um campo de pesquisa e é totalmente responsiva para dispositivos móveis.
+A estrutura do projeto foi desenvolvida com React e TypeScript. Para garantir melhor performance, utilizei o Vite como bundler e o Redux para gerenciar o estado da aplicação. As animações foram implementadas no formato Lottie JSON, integradas por meio da biblioteca Lottie React.
+<br/>
+<br/>
 
 ## Tecnologias Utilizadas
 
@@ -23,10 +11,15 @@ Este projeto é uma aplicação web de uma agenda de contatos simples, onde é p
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)&nbsp;
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)&nbsp;
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)&nbsp;
+![Lottie React](https://img.shields.io/badge/Lottie_React-1CAAB8?style=for-the-badge&logo=react&logoColor=white)&nbsp;
+<br/>
+<br/>
 
-## Funcionalidades
+## Link Demo: [Next Finance](https://project-next-finance.vercel.app/)
 
-- Adicionar um novo contato (nome, telefone, email, etc.).
-- Editar informações de um contato existente.
-- Remover um contato da agenda.
-- Visualizar detalhes de um contato específico.
+<div align="center">
+  <a href="https://efood-rosy.vercel.app/" title="Clique e visite o projeto!">
+    <img src="./public/Tela1.png" style="max-width: 1300px; width: 100%;" alt="Next Finance">
+  </a>
+</div>
+
